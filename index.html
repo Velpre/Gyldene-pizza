@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    
 
-  </body>
+<head>
+  <meta charset="utf-8">
+  <!-- Fonts og fontawsome -->
+  <link href="https://fonts.googleapis.com/css?family=Futura&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <!-- CSS links -->
+  <link rel="stylesheet" href="css/login.css">
+  <title>Log in</title>
+</head>
+
+<body>
+
+  <main>
+    <div class="left-screen">
+      <div class="left-screen-header">
+        <h1>WELCOME BACK</h1>
+        <h1 id="user-name-header">VELJKO</h1>
+      </div>
+
+    </div>
+
+    <div class="right-screen">
+
+      <div class="nav-login">
+
+        <div id="sign-in" class="nav-login-wrap">
+          <a href="#" class="nav-button">SIGN IN</a>
+          <div class="signin-underline"></div>
+        </div>
+
+        <div id="create-account" class="nav-login-wrap">
+         <a href="#" class="nav-button">CREATE ACCOUNT</a>
+         <div class="signin-underline createAccount-underline"></div>
+       </div>
+
+      </div>
+
+      <div class="login-div">
+
+					<label class="login_username_label">USERNAME</label>
+					<input type="text" class="login_input" placeholder="USERNAME" minlength="3" size="30" required>
+					<div class="login_input_underline_inactive"></div>
+					<div class="login_input_underline_active_from"></div>
+
+
+					<label class="login_password_label">PASSWORD</label>
+					<input type="password" class="login_password" placeholder="PASSWORD" minlength="2" size="30" required>
+					<i id="toggle_password_eye" class="far fa-eye fa-eye-slash"></i>
+					<div class="login_password_underline_inactive"></div>
+					<div class="login_password_underline_active_from"></div>
+
+
+					<input type="checkbox" class="logout_checkbox">
+					<span class="logout_txt">LOG ME OUT AFTER</span>
+
+      </div>
+
+      <div class="login-btn">
+        <button type="submit">LOG IN</button>
+        <a href="#">FORGOT PASSWORD?</a>
+      </div>
+
+
+    </div>
+
+  </main>
+
+  <script src="JS/login.js" charset="utf-8"></script>
+
+
+</body>
+
 </html>

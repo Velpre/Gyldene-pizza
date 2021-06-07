@@ -1,0 +1,94 @@
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: Futura;
+}
+
+main{
+  display:flex;
+}
+
+/* Venstre siden */
+.left-screen{
+  width: 50%;
+  height: 100vh;
+  background: red;
+  position: relative;
+  background:#003B49;
+}
+
+.left-screen-header{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  color:#FFF;
+}
+
+/* Høyre siden */
+.right-screen{
+  width:50%;
+  height: 100vh;
+  position: relative;
+  background:#FFF;
+}
+/* Nav */
+.nav-login{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10%;
+  font-size: 2vw;
+}
+
+.nav-button{
+text-decoration:none;
+font-family: Futura;
+font-weight: bolder;
+color:#003B49;
+}
+
+.nav-button:hover{
+  cursor: pointer;
+  transform: scale(1.05)
+}
+
+.signin-underline {
+  width: 104%;
+  height: 12px;
+  background: #003B49;
+  border-radius: 20px;
+}
+
+.createAccount-underline{
+  display: none;
+}
+
+
+/* Login inputs */
+.login-div{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  width: 45%;
+}
+
+.login-btn{
+  position: absolute;
+  bottom: 10%;
+  left:50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.nav-login-wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
