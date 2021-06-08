@@ -109,6 +109,7 @@ body {
 .password-div{
   display:flex;
   flex-direction:column;
+  margin-bottom: 5%;
 }
 
 
@@ -175,6 +176,11 @@ body {
   font-weight: 600;
   color:#006a73;
 }
+.login-password-label1{
+  visibility: hidden;
+  font-weight: 600;
+  color:#006a73;
+}
 
 
 /* Log in button */
@@ -199,12 +205,32 @@ body {
   font-weight: bold;
 }
 
+.login-btn:hover{
+  cursor: pointer;
+}
+
 .login-btn-div a{
  margin: 20% auto 0;
  font-size: 13px;
  color:#000;
  font-style: italic;
 }
+
+
+/* CREATE ACCOUNT SIDE */
+
+.mail-div{
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+
+.mail-label{
+  visibility: hidden;
+  font-weight: 600;
+  color:#006a73;
+}
+
 
 @media screen and (max-width: 920px) {
   .main-content{

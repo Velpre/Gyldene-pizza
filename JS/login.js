@@ -7,24 +7,29 @@ const singin= document.getElementById("sign-in");
 window.onload = function(){
   printSigninContent();
 
-  togglePasswordVisibility();
   signInLines();
-  showUsername();
-  inputLinesAnimatios();
   login();
+  showUsername();
+  togglePasswordVisibility();
+  inputLinesAnimatiosLogin();
+
 }
 
 singin.addEventListener("click", ()=>{
   printSigninContent();
-  togglePasswordVisibility();
+
   signInLines();
-  showUsername();
-  inputLinesAnimatios();
   login();
+  showUsername();
+  togglePasswordVisibility();
+  inputLinesAnimatiosLogin();
+
 })
 
 createAcount.addEventListener("click", ()=>{
   createAcountContent();
+  togglePasswordVisibility();
+  inputLinesAnimatiosCreateAccount();
 })
 
 
@@ -147,7 +152,7 @@ function togglePasswordVisibility(){
 }
 
 // Fargelegger input linjer og flytter placeholder text
-function inputLinesAnimatios(){
+function inputLinesAnimatiosLogin(){
   const usernameInput = document.querySelector(".login-input");
   const passwordInput = document.querySelector(".password-input");
 
@@ -180,14 +185,78 @@ function inputLinesAnimatios(){
     passwordLabel.style.visibility= "hidden";
     passwordInput.setAttribute('placeholder', 'PASSWORD');
   } );
+};
+
+function inputLinesAnimatiosCreateAccount(){
+  const usernameInput = document.querySelector(".login-input");
+  const passwordInput = document.querySelector(".password-input");
+  const passwordInput1 = document.querySelector(".password-input1");
+  const mailInput = document.querySelector(".mail-input");
+
+  const userNameUnderlineActive = document.querySelector(".login-input-underline");
+  const passwordUnderlineActive = document.querySelector(".login-password-underline");
+  const passwordUnderlineActive1 = document.querySelector(".login-password-underline1");
+  const mailUnderlineActive = document.querySelector(".login-mail-underline");
+
+  const usernameLabel = document.querySelector(".login-username-label");
+  const passwordLabel = document.querySelector(".login-password-label");
+  const passwordLabel1 = document.querySelector(".login-password-label1");
+  const mailLabel = document.querySelector(".mail-label");
+
+  usernameInput.addEventListener('focus', function (e) {
+    userNameUnderlineActive.classList.add('login-underline-active-to');
+    usernameLabel.style.visibility= "visible";
+    usernameInput.setAttribute('placeholder', '');
+  });
+
+  usernameInput.addEventListener('focusout', function (e) {
+    userNameUnderlineActive.classList.remove('login-underline-active-to');
+    usernameLabel.style.visibility= "hidden";
+    usernameInput.setAttribute('placeholder', 'USERNAME');
+  });
+
+  mailInput.addEventListener('focus', function (e) {
+      mailUnderlineActive.classList.add('login-underline-active-to');
+      mailLabel.style.visibility= "visible";
+      mailInput.setAttribute('placeholder', '');
+  } );
+
+  mailInput.addEventListener('focusout', function (e) {
+    mailUnderlineActive.classList.remove('login-underline-active-to');
+    mailLabel.style.visibility= "hidden";
+    mailInput.setAttribute('placeholder', 'MAIL');
+  } );
+
+  passwordInput.addEventListener('focus', function (e) {
+      passwordUnderlineActive.classList.add('login-underline-active-to');
+      passwordLabel.style.visibility= "visible";
+      passwordInput.setAttribute('placeholder', '');
+  } );
+
+  passwordInput.addEventListener('focusout', function (e) {
+    passwordUnderlineActive.classList.remove('login-underline-active-to');
+    passwordLabel.style.visibility= "hidden";
+    passwordInput.setAttribute('placeholder', 'PASSWORD');
+  } );
+
+  passwordInput1.addEventListener('focus', function (e) {
+      passwordUnderlineActive1.classList.add('login-underline-active-to');
+      passwordLabel1.style.visibility= "visible";
+      passwordInput1.setAttribute('placeholder', '');
+  } );
+
+  passwordInput1.addEventListener('focusout', function (e) {
+    passwordUnderlineActive1.classList.remove('login-underline-active-to');
+    passwordLabel1.style.visibility= "hidden";
+    passwordInput1.setAttribute('placeholder', 'CONFIRM PASSWORD');
+  } );
 }
 
 // Printer main content for Create Account siden
-
 function createAcountContent(){
-mainContent.innerHTML = `
+  mainContent.innerHTML = `
 
-<form id="form" action="index.html" method="post">
+  <form id="form" action="index.html" method="post">
 
   <div class="login-div">
 
@@ -198,11 +267,11 @@ mainContent.innerHTML = `
       <div class="login-underlines login-input-underline"></div>
     </div>
 
-    <div class="username-div">
-      <label class="login-username-label">USERNAME</label>
-      <input type="mail" class="login-input login-input" placeholder="Mail" minlength="3" size="30" required>
+    <div class="mail-div">
+      <label class="mail-label">MAIL</label>
+      <input type="mail" class="login-input mail-input" placeholder="MAIL" minlength="3" size="30" required>
       <div class="login-underline-inactive"></div>
-      <div class="login-underlines login-input-underline"></div>
+      <div class="login-underlines login-mail-underline"></div>
     </div>
 
 
@@ -219,15 +288,26 @@ mainContent.innerHTML = `
       <div class="login-underlines login-password-underline"></div>
     </div>
 
-</div>
+    <div class="password-div">
+      <div>
+        <label class="login-password-label1">CONFIRM PASSWORD</label>
+      </div>
 
+      <div class="password-wrap">
+        <input class="login-input password-input1" type="password" placeholder="CONFIRM PASSWORD" minlength="2" size="30" required>
+        <i id="toggle_password_eye" class="far fa-eye fa-eye-slash"></i>
+      </div>
+      <div class="login-underline-inactive"></div>
+      <div class="login-underlines login-password-underline1"></div>
+    </div>
+
+  </div>
 
 
   <div class="login-btn-div">
-    <button class="login-btn" type="submit">LOG IN</button>
+    <button class="login-btn" type="submit">CREATE ACCOUNT</button>
     <a href="#">FORGOT PASSWORD?</a>
   </div>
-</form>
-
-`
+  </form>
+  `
 }
