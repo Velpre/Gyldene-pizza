@@ -92,9 +92,9 @@ window.onload = inboxName.innerHTML = localStorage.getItem("username");
 
 // Time function som printer ut melding etter vis antal sekunder
 function printMessage3(){
-message3.style.visibility="visible";
-var audio = new Audio("../Images/mail-notification.mp3");
-audio.play();
+  message3.style.visibility="visible";
+  var audio = new Audio("../Images/mail-notification.mp3");
+  audio.play();
 };
 window.onload = setTimeout(printMessage3, 6000);
 
@@ -106,29 +106,56 @@ const employees = document.querySelector(".navbar_employees");
 const sales = document.querySelector(".navbar_sales");
 
 home.addEventListener("click", ()=>{
-home.style.borderBottom="4px solid #fff";
-food.style.borderBottom="none";
-employees.style.borderBottom="none";
-sales.style.borderBottom="none";
+ home.style.borderBottom="4px solid #fff";
+ food.style.borderBottom="none";
+ employees.style.borderBottom="none";
+ sales.style.borderBottom="none";
 });
 
 food.addEventListener("click", ()=>{
-home.style.borderBottom="none";
-food.style.borderBottom="4px solid #fff";
-employees.style.borderBottom="none";
-sales.style.borderBottom="none";
+ home.style.borderBottom="none";
+ food.style.borderBottom="4px solid #fff";
+ employees.style.borderBottom="none";
+ sales.style.borderBottom="none";
 });
 
 employees.addEventListener("click", ()=>{
-home.style.borderBottom="none";
-food.style.borderBottom="none";
-employees.style.borderBottom="4px solid #fff";
-sales.style.borderBottom="none";
+ home.style.borderBottom="none";
+ food.style.borderBottom="none";
+ employees.style.borderBottom="4px solid #fff";
+ sales.style.borderBottom="none";
 });
 
 sales.addEventListener("click", ()=>{
-home.style.borderBottom="none";
-food.style.borderBottom="none";
-employees.style.borderBottom="none";
-sales.style.borderBottom="4px solid #fff";
+
+
+ home.style.borderBottom="none";
+
+
+ food.style.borderBottom="none";
+
+
+ employees.style.borderBottom="none";
+
+
+ sales.style.borderBottom="4px solid #fff";
 });
+
+// Viser inbox når bruker klikker på melding icone
+
+
+const messageIcone = document.querySelector(".inbox-icone");
+const inboxContainer = document.querySelector(".inbox_container");
+const closeInbox = document.querySelector(".close-inbox");
+
+messageIcone.addEventListener("click", ()=>{
+  inboxContainer.style.display="inline-block";
+  messageIcone.style.display="none";
+  closeInbox.style.display="inline-block"
+})
+
+closeInbox.addEventListener("click", ()=>{
+  inboxContainer.style.display = "none";
+  messageIcone.style.display = "inline-block";
+  closeInbox.style.display = "none";
+})

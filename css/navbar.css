@@ -1,8 +1,10 @@
 body{
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   position: relative;
   font-family: Futura;
+  overflow: hidden;
 }
 
 /* Navbar*/
@@ -38,7 +40,6 @@ body{
 .navbar-item{
   display: flex;
   position: relative;
-  transition: 200ms ease-out;
 }
 
 .tooltiptext{
@@ -71,7 +72,38 @@ body{
   position: absolute;
   right:0;
   background: #ECECF6;
+
 }
+
+.inbox-icone{
+position: absolute;
+right: 3%;
+top:3%;
+z-index: 2;
+display: none;
+transition: 200ms ease-out;
+color:#003B49;
+}
+
+.inbox-icone:hover{
+
+    transform: scale(1.2);
+}
+
+.close-inbox{
+  position: absolute;
+  right: 2%;
+  top:2%;
+  z-index: 2;
+  display: none;
+  transition: 200ms ease-out;
+  color:#003B49;
+}
+
+.close-inbox:hover{
+  transform: scale(1.2);
+}
+
 
 .inbox-wrap{
   display: flex;
@@ -252,7 +284,13 @@ body{
     font-size: 3vh;
   }
 
+  .inbox_container {
+    display: none;
+  }
 
+  .inbox-icone{
+    display: inline-block;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -263,6 +301,4 @@ body{
     width: 15%;
   }
 
-  .inbox_container {
-  }
 }
