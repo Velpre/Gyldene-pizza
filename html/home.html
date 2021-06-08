@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts og fontawsome -->
+    <link href="https://fonts.googleapis.com/css?family=Futura&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- CSS links -->
+    <link rel="stylesheet" href="../css/navbar.css">
+    <title>Home</title>
+  </head>
+  <body>
+
+  <!-- Overlay som fylles ut med JS (når brukeren har klikket på en melding) -->
+  <div class="overlay"></div>
+  <!-- Printer ut hoved innhold gjennom JS -->
+  <div class="main_content">
+
+  </div>
+
+  <!-- Inbox delen-->
+  <div class="inbox_container">
+
+  <div class="inbox-wrap">
+
+      <div class="welcome_message">
+        <img class="profile_picture" src="../images/employees/userImageInbox.png" alt="userPic">
+        <h3>Welcome</h3>
+        <h3 class="inbox_name"></h3>
+      </div>
+
+
+      <div class="msg1_time expandable">
+        <div class="time">
+          <p>18:45</p>
+          <p class="yesterday"></p>
+        </div>
+        <div class="msg">
+        <i class="close fas fa-times"></i>
+        <div class="message_info_div">
+          <img class="message_profile_picture" src="../images/employees/random.jpg" alt="emplPic">
+          <div>
+            <h3>OLE RAMBERG</h3>
+            <h5 class="avd">avd. KARL JOHAN</h5>
+          </div>
+
+        </div>
+
+        <div class="message_txt_div">
+          <p class="message_txt"></p>
+        </div>
+      </div>
+      </div>
+
+      <div class="msg2_time expandable">
+        <div class="time">
+          <p>19:22</p>
+          <p class="yesterday"></p>
+        </div>
+        <div class="msg">
+          <i class="close fas fa-times"></i>
+          <div class="message_info_div">
+            <img class="message_profile_picture" src="../images/employees/Kari.jpg" alt="emplPic">
+                  <div>
+                    <h3>KARI OLSEN</h3>
+              <h5 class="avd">avd. BJØRVIKA</h5>
+            </div>
+          </div>
+          <div class="message_txt_div">
+            <p class="message_txt"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="msg3_time expandable">
+        <div class="time">
+          <p class="timeToday">17:00</p>
+          <p class="dateToday">22 Mar</p>
+        </div>
+        <div class="msg msg3">
+          <i class="close fas fa-times"></i>
+          <div class="message_info_div">
+          <img class="message_profile_picture" src="../images/employees/Kari.jpg" alt="emplPic" width="779" height="613">
+          <div >
+            <h3>MARIUS SUNDE</h3>
+            <h5 class="avd">avd. GRUNERLØKKA</h5>
+          </div>
+        </div>
+          <div class="message_txt_div">
+          <p class="message_txt"></p>
+        </div>
+        </div>
+      </div>
+
+
+    <div class="logout_container">
+      <a href="index.html"><i class=" logout_icone fas fa-sign-out-alt fa-2x"></i></a>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar_container">
+    <div class="navbar-wrap">
+      <div class="navbar-item">
+        <a class="navbar_home" href="#"><i class="fas fa-home"></i></a>
+        <span class="tooltiptext">HOME</span>
+      </div>
+      <div class="navbar-item">
+        <a class="navbar_food" href="#"><i class="fas fa-pizza-slice"></i></a>
+        <span class="tooltiptext">FOOD</span>
+      </div>
+      <div class="navbar-item">
+        <a class="navbar_employees" href="#"><i class="fas fa-users"></i></a>
+        <span class="tooltiptext">EMPLOYEES</span>
+      </div>
+      <div class="navbar-item">
+        <a class="navbar_sales" href="#"><i class="fas fa-chart-line"></i></a>
+        <span class="tooltiptext">SALES</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- JS Scripts -->
+  <script src="../js/home.js" charset="utf-8"></script>
+  </body>
+</html>

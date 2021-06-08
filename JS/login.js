@@ -45,7 +45,7 @@ function printSigninContent(){
   <h1 class="name-header-line" id="username-header"></h1>
   `
   mainContent.innerHTML = `
-    <form id="form" action="index.html" method="post">
+    <form id="form" action="./html/home.html">
 
       <div class="login-div">
 
@@ -78,8 +78,8 @@ function printSigninContent(){
     </div>
 
       <div class="login-btn-div">
-        <button class="login-btn" type="submit">LOG IN</button>
-        <a href="#">FORGOT PASSWORD?</a>
+        <button class="login-btn" type="submit">SIGN IN</button>
+        <a href="">FORGOT PASSWORD?</a>
       </div>
     </form>
   `
