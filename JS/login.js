@@ -1,5 +1,6 @@
 
 const mainContent = document.querySelector(".right-screen-main-content");
+const leftScreenHeader = document.querySelector(".left-screen-header");
 const createAcount = document.getElementById("create-account");
 const singin= document.getElementById("sign-in");
 
@@ -8,7 +9,7 @@ window.onload = function(){
   printSigninContent();
 
   signInLines();
-  login();
+  loginBtn();
   showUsername();
   togglePasswordVisibility();
   inputLinesAnimatiosLogin();
@@ -19,10 +20,11 @@ singin.addEventListener("click", ()=>{
   printSigninContent();
 
   signInLines();
-  login();
+  loginBtn();
   showUsername();
   togglePasswordVisibility();
   inputLinesAnimatiosLogin();
+
 
 })
 
@@ -30,12 +32,18 @@ createAcount.addEventListener("click", ()=>{
   createAcountContent();
   togglePasswordVisibility();
   inputLinesAnimatiosCreateAccount();
+  createAccountBtn();
+  togglePasswordVisibility1();
 })
 
 
 
 // Printer main content for sign-in siden
 function printSigninContent(){
+  leftScreenHeader.innerHTML = `
+  <h1 class="welcome-header-line">WELCOME BACK</h1>
+  <h1 class="name-header-line" id="username-header"></h1>
+  `
   mainContent.innerHTML = `
     <form id="form" action="index.html" method="post">
 
@@ -74,7 +82,6 @@ function printSigninContent(){
         <a href="#">FORGOT PASSWORD?</a>
       </div>
     </form>
-
   `
 }
 
@@ -94,7 +101,7 @@ function signInLines(){
 }
 
 // Tilater brukeren å logge inn med riktig passord og username
-function login(){
+function loginBtn(){
   const loginBtn = document.querySelector(".login-btn");
   loginBtn.disabled = true;
   const form = document.getElementById("form");
@@ -143,13 +150,27 @@ function saveUsername(username){
 //Toggle vising av passord.
 function togglePasswordVisibility(){
   const passwordInput = document.querySelector(".password-input");
+  const passwordInput1 = document.querySelector(".password-input1");
   const passwordEye = document.getElementById("toggle_password_eye");
+  const passwordEye1 = document.getElementById("toggle_password_eye1");
   passwordEye.addEventListener("click", function(e){
       const type = passwordInput.getAttribute("type") === 'password' ? "text" : "password";
       passwordInput.setAttribute("type", type);
       passwordEye.classList.toggle("fa-eye-slash");
   });
 }
+
+function togglePasswordVisibility1(){
+  const passwordInput1 = document.querySelector(".password-input1");
+  const passwordEye1 = document.getElementById("toggle_password_eye1");
+  passwordEye1.addEventListener("click", function(e){
+      const type = passwordInput1.getAttribute("type") === 'password' ? "text" : "password";
+      passwordInput1.setAttribute("type", type);
+      passwordEye1.classList.toggle("fa-eye-slash");
+  });
+}
+
+
 
 // Fargelegger input linjer og flytter placeholder text
 function inputLinesAnimatiosLogin(){
@@ -187,6 +208,72 @@ function inputLinesAnimatiosLogin(){
   } );
 };
 
+// Printer main content for Create Account siden
+function createAcountContent(){
+  leftScreenHeader.innerHTML = `
+  <h1 class="welcome-header-line">WELCOME</h1>
+  `
+  mainContent.innerHTML = `
+
+  <form id="form" action="index.html" method="post">
+
+  <div class="login-div">
+
+    <div class="username-div">
+      <label class="login-username-label">USERNAME</label>
+      <input type="text" class="login-input login-input" placeholder="USERNAME" minlength="3" size="30" required>
+      <div class="login-underline-inactive"></div>
+      <div class="login-underlines login-input-underline"></div>
+    </div>
+
+    <div class="mail-div">
+      <label class="mail-label">MAIL</label>
+      <input type="mail" class="login-input mail-input" placeholder="MAIL" minlength="3" size="30" required>
+      <div class="login-underline-inactive"></div>
+      <div class="login-underlines login-mail-underline"></div>
+    </div>
+
+
+    <div class="password-div">
+      <div>
+        <label class="login-password-label">PASSWORD</label>
+      </div>
+
+      <div class="password-wrap">
+        <input class="login-input password-input" type="password" placeholder="PASSWORD" minlength="2" size="30" required>
+        <i id="toggle_password_eye" class="far fa-eye fa-eye-slash"></i>
+      </div>
+      <div class="login-underline-inactive"></div>
+      <div class="login-underlines login-password-underline"></div>
+    </div>
+
+    <div class="password-div">
+      <div>
+        <label class="login-password-label1">CONFIRM PASSWORD</label>
+      </div>
+
+      <div class="password-wrap">
+        <input class="login-input password-input1" type="password" placeholder="CONFIRM PASSWORD" minlength="2" size="30" required>
+        <i id="toggle_password_eye1" class="far fa-eye fa-eye-slash"></i>
+      </div>
+      <div class="login-underline-inactive"></div>
+      <div class="login-underlines login-password-underline1"></div>
+    </div>
+
+  </div>
+
+
+  <div class="login-btn-div">
+    <button class="login-btn" type="submit">CREATE ACCOUNT</button>
+    <a href="#">FORGOT PASSWORD?</a>
+  </div>
+  </form>
+  `
+
+  document.querySelector(".welcome-header-line").style.left="30%";
+}
+
+// Fargelegger input linjer og flytter placeholder text
 function inputLinesAnimatiosCreateAccount(){
   const usernameInput = document.querySelector(".login-input");
   const passwordInput = document.querySelector(".password-input");
@@ -252,62 +339,41 @@ function inputLinesAnimatiosCreateAccount(){
   } );
 }
 
-// Printer main content for Create Account siden
-function createAcountContent(){
-  mainContent.innerHTML = `
+function createAccountBtn(){
+  const loginBtn = document.querySelector(".login-btn");
+  loginBtn.disabled = true;
+  const form = document.getElementById("form");
 
-  <form id="form" action="index.html" method="post">
+  const usernameInput1 = document.querySelector(".login-input");
 
-  <div class="login-div">
+  const mailInput = document.querySelector(".mail-input");
 
-    <div class="username-div">
-      <label class="login-username-label">USERNAME</label>
-      <input type="text" class="login-input login-input" placeholder="USERNAME" minlength="3" size="30" required>
-      <div class="login-underline-inactive"></div>
-      <div class="login-underlines login-input-underline"></div>
-    </div>
+  const userNameUnderlineActive = document.querySelector(".login-input-underline");
+  const mailUnderlineActive = document.querySelector(".login-mail-underline");
+  const passwordUnderlineActive = document.querySelector(".login-password-underline");
+  const passwordUnderlineActive1 = document.querySelector(".login-password-underline1");
 
-    <div class="mail-div">
-      <label class="mail-label">MAIL</label>
-      <input type="mail" class="login-input mail-input" placeholder="MAIL" minlength="3" size="30" required>
-      <div class="login-underline-inactive"></div>
-      <div class="login-underlines login-mail-underline"></div>
-    </div>
+  form.addEventListener("keyup", function(){
+      const passwordInput = document.querySelector(".password-input");
+      const passwordInput1 = document.querySelector(".password-input1");
+      let password = passwordInput.value;
+      let password1 = passwordInput1.value;
 
+      if(password === password1 && password != "" && password1 != "" ){
+          loginBtn.disabled = false;
+          loginBtn.style.opacity = "1";
+          userNameUnderlineActive.classList.add('login_green');
+          mailUnderlineActive.classList.add('login_green');
+          passwordUnderlineActive.classList.add('login_green');
+          passwordUnderlineActive1.classList.add('login_green');
+      }else {
+          loginBtn.disabled = true;
+          loginBtn.style.opacity = "0.2";
+          userNameUnderlineActive.classList.remove('login_green');
+          mailUnderlineActive.classList.remove('login_green');
+          passwordUnderlineActive.classList.remove('login_green');
+          passwordUnderlineActive1.classList.remove('login_green');
+      }
 
-    <div class="password-div">
-      <div>
-        <label class="login-password-label">PASSWORD</label>
-      </div>
-
-      <div class="password-wrap">
-        <input class="login-input password-input" type="password" placeholder="PASSWORD" minlength="2" size="30" required>
-        <i id="toggle_password_eye" class="far fa-eye fa-eye-slash"></i>
-      </div>
-      <div class="login-underline-inactive"></div>
-      <div class="login-underlines login-password-underline"></div>
-    </div>
-
-    <div class="password-div">
-      <div>
-        <label class="login-password-label1">CONFIRM PASSWORD</label>
-      </div>
-
-      <div class="password-wrap">
-        <input class="login-input password-input1" type="password" placeholder="CONFIRM PASSWORD" minlength="2" size="30" required>
-        <i id="toggle_password_eye" class="far fa-eye fa-eye-slash"></i>
-      </div>
-      <div class="login-underline-inactive"></div>
-      <div class="login-underlines login-password-underline1"></div>
-    </div>
-
-  </div>
-
-
-  <div class="login-btn-div">
-    <button class="login-btn" type="submit">CREATE ACCOUNT</button>
-    <a href="#">FORGOT PASSWORD?</a>
-  </div>
-  </form>
-  `
+  });
 }

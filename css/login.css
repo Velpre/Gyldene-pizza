@@ -103,13 +103,13 @@ body {
 .username-div{
   display:flex;
   flex-direction: column;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 }
 
 .password-div{
   display:flex;
   flex-direction:column;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 }
 
 
@@ -118,7 +118,7 @@ body {
 }
 
 .logout-checkbox{
-  margin-top: 5%;
+  margin-top: 1%;
 }
 
 .logout-checkbox input{
@@ -130,6 +130,12 @@ body {
 
 
 #toggle_password_eye{
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+}
+
+#toggle_password_eye1{
   position: absolute;
   right: 0;
   bottom: 5%;
@@ -186,7 +192,7 @@ body {
 /* Log in button */
 .login-btn-div{
   position: absolute;
-  bottom: 10%;
+  bottom: 3%;
   left:50%;
   transform: translateX(-50%);
   display: flex;
