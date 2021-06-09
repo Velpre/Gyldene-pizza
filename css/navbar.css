@@ -4,11 +4,10 @@ body {
   padding: 0;
   position: relative;
   font-family: Futura;
-  overflow: hidden;
 }
 
 /* Navbar*/
-.navbar_container {
+.navbar-container {
   width: 7%;
   height: 100vh;
   position: relative;
@@ -136,9 +135,14 @@ body {
 }
 
 /* Meldinger i inboxen */
+.message-wrap{
+  width: 90%;
+  margin: auto;
+}
 .msg {
   background: #FFF;
   border-radius: 20px;
+
 }
 
 .msg:hover {
@@ -152,6 +156,7 @@ body {
   justify-content: space-between;
   margin-bottom: -3%;
   font-size: 12px;
+  font-weight: bold;
   color: black;
   font-style: italic;
 }
@@ -161,7 +166,6 @@ body {
   margin: auto;
   display: flex;
   align-items: center;
-  font-family: Futura;
   padding: 2% 0;
 }
 
@@ -189,19 +193,7 @@ body {
   padding-bottom: 1%;
 }
 
-.msg1_time {
-  width: 90%;
-  margin: auto;
-}
-
-.msg2_time {
-  width: 90%;
-  margin: auto;
-}
-
 .msg3_time {
-  width: 90%;
-  margin: auto;
   visibility: hidden;
   animation-name: pop-up;
   animation-duration: 1s;
@@ -216,15 +208,11 @@ body {
   0% {
     opacity: 0;
     width: 50%;
-    height: 5%;
-    top: 75%;
   }
 
   100% {
     opacity: 1;
     width: 90%;
-    height: 20%;
-    top: 68%;
   }
 }
 
@@ -275,36 +263,33 @@ body {
 
 /* Media query */
 @media screen and (max-width: 920px) {
-  .message_txt_div {
 
-  }
-
-  .navbar_container {
+/* Navbar */
+  .navbar-container {
     width: 10%;
     font-size: 3vh;
   }
-
+/* Inbox */
   .inbox_container {
     display: none;
-    width: 30%
+    width: 40%
   }
 
   .inbox-icone {
     display: inline-block;
   }
+
 }
 
 @media screen and (max-width: 600px) {
-  .avd {
-    display: none;
-  }
-
-  .navbar_container {
+/* NAvbar */
+  .navbar-container {
     width: 15%;
   }
 
+/* Inbox */
   .inbox_container {
+    width: 60%;
     display: none;
-    width: 40%
   }
 }

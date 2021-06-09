@@ -63,8 +63,8 @@ function slicingMsgTxt(){
 window.onload = slicingMsgTxt();
 
 // Toggler expanded class som åpner og stenger inbox meldinger
- // Toggler hidden class som gjemmer og viser tiden for meldingene
- // Printer ut hele meldingen og slicer den når meldingen ikke er ekspandert
+// Toggler hidden class som gjemmer og viser tiden for meldingene
+// Printer ut hele meldingen og slicer den når meldingen ikke er ekspandert
 
 expandable.forEach(element => {
 element.addEventListener("click", (e)=>{
@@ -95,20 +95,18 @@ element.addEventListener("click", (e)=>{
 });
 });
 
-window.addEventListener("resize", function(){
-    const msgTxtDiv = document.querySelector(".message_txt_div");
-    if (document.documentElement.clientWidth < 920) {
-      msgTxtDiv.style.display="none";
-    }
-    else {
-      msgTxtDiv.style.display="inline-block";
-    }
-}, true);
+// window.addEventListener("resize", function(){
+//     const msgTxtDiv = document.querySelector(".message_txt_div");
+//     if (document.documentElement.clientWidth < 920) {
+//       msgTxtDiv.style.display="none";
+//     }
+//     else {
+//       msgTxtDiv.style.display="inline-block";
+//     }
+// }, true);
 
 // Koden som henter username fra localStorage og printer det ut i inbox delen
 window.onload = inboxName.innerHTML = localStorage.getItem("username");
-
-
 
 
 // Viser inbox når bruker klikker på melding icone
@@ -120,7 +118,7 @@ const closeInbox = document.querySelector(".close-inbox");
 messageIcone.addEventListener("click", ()=>{
   inboxContainer.style.display="inline-block";
   messageIcone.style.display="none";
-  closeInbox.style.display="inline-block"
+  closeInbox.style.display="inline-block";
 })
 closeInbox.addEventListener("click", ()=>{
   inboxContainer.style.display = "none";
@@ -140,10 +138,10 @@ window.onload = setTimeout(printMessage3, 6000);
 
 
 // Navbar funksjonalitet som setter border under iconer som indikerer hva brukeren har klikket på
-const home = document.querySelector(".navbar_home");
-const food = document.querySelector(".navbar_food");
-const employees = document.querySelector(".navbar_employees");
-const sales = document.querySelector(".navbar_sales");
+const home = document.querySelector(".navbar-home");
+const food = document.querySelector(".navbar-food");
+const employees = document.querySelector(".navbar-employees");
+const sales = document.querySelector(".navbar-sales");
 
 home.addEventListener("click", ()=>{
  home.style.borderBottom="4px solid #fff";
