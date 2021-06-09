@@ -12,7 +12,7 @@ const SalesModule = ( function (){
         grossRevenueAccThisYear: 500000,
         grossRevenuePreviousYear: 700000,
 
-        revenueDaysLastweek : [ 7000, 8500,9000,23500,11000,15500,26000]
+        revenueDaysLastweek : [ 7000, 8500,9000,23500,11000,20000,600]
     },
     {
         name: "Nydalen",
@@ -24,8 +24,8 @@ const SalesModule = ( function (){
         revenuePreviousDay: 8000,
         grossRevenueAccThisYear: 300000,
         grossRevenuePreviousYear: 600000,
-        
-        revenueDaysLastweek : [ 5000, 9500,16000,10500,25000,15500,12000]
+
+        revenueDaysLastweek : [ 5000, 9500,16000,10500,25000,1000,1200]
     },
     {
         name: "Grunerløkka",
@@ -38,8 +38,8 @@ const SalesModule = ( function (){
 
         grossRevenueAccThisYear: 500000,
         grossRevenuePreviousYear: 900000,
-        
-        revenueDaysLastweek : [ 10000, 13500,15000,14500,16000,25500,16000]
+
+        revenueDaysLastweek : [ 10000, 13500,15000,14500,16000,1000,160]
     },
     {
         name: "Karl-Johan",
@@ -52,13 +52,13 @@ const SalesModule = ( function (){
 
         grossRevenueAccThisYear: 300000,
         grossRevenuePreviousYear: 500000,
-        
-        revenueDaysLastweek : [ 20000, 23500,30000,4500,15000,35500,15000]
+
+        revenueDaysLastweek : [ 20000, 23500,30000,4500,15000,500,15000]
     }
     ]
 
     const getAll = () => salesArray;
-        
+
     /*funksjon for å hente ut totale-salg per dag for restaurantene */
     const getTotalperDay = function (day){
         let total = 0;
@@ -66,26 +66,18 @@ const SalesModule = ( function (){
         total += salesArray[1].revenueDaysLastweek[day];
         total += salesArray[2].revenueDaysLastweek[day];
         total += salesArray[3].revenueDaysLastweek[day];
-      
+
         total = (total/100000) * 100;
         total = total +"%"
         return total;
     }
 
-    // kaller funksjonen med de ulike dagene.
-    const getTotalMonday = getTotalperDay(0);
-    const getTotalTuesday = getTotalperDay(1);
-    const getTotalWednesday = getTotalperDay(2);
-    const getTotalThursday = getTotalperDay(3);
-    const getTotalFriday = getTotalperDay(4);
-    const getTotalSaturday = getTotalperDay(5);
-    const getTotalSunday = getTotalperDay(6);
 
 
 
     // funksjon som skal ta knappe-verdiene som parameter, (navn ,periode, category)
 
-    const getRevenueByRestaurantAndPeriodAndCategory = (name,period, category)  => {        
+    const getRevenueByRestaurantAndPeriodAndCategory = (name,period, category)  => {
         let restaurant = salesArray.filter( object => object.name=== name);
         let revenueNumber = "";
 
@@ -106,7 +98,7 @@ const SalesModule = ( function (){
         }
 
          // tester for category og returner deretter ca profitt: pizza settes til 70%. Drikke til 20%. Salat til 10%.
-        
+
         switch (category){
             case "all":
                 return revenueNumber;
@@ -115,17 +107,16 @@ const SalesModule = ( function (){
             case "drinks":
                 return Math.round(revenueNumber * 0.2);
             case "salads":
-                return Math.round(revenueNumber  * 0.1);          
+                return Math.round(revenueNumber  * 0.1);
         }
-     
+
      };
 
 
-    
-    return {getAll, getTotalMonday,getTotalTuesday, getTotalWednesday,getTotalThursday,getTotalFriday,getTotalSaturday,getTotalSunday, getRevenueByRestaurantAndPeriodAndCategory};
+
+    return {getAll,getTotalperDay, getRevenueByRestaurantAndPeriodAndCategory};
 
 
 }())
 
 export default SalesModule
-

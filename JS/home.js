@@ -22,32 +22,32 @@ let mainTextHome = `
 
 
     <div class="diagrams_container">
-        <div class="diagram_1">
-           <div class="diagram_1_filled"></div>
+        <div class="diagram">
+           <div class="diagram-filled"></div>
         </div>
 
-        <div class="diagram_2">
-          <div class="diagram_2_filled"></div>
+        <div class="diagram">
+          <div class="diagram-filled"></div>
         </div>
 
-       <div class="diagram_3">
-          <div class="diagram_3_filled"></div>
+       <div class="diagram">
+          <div class="diagram-filled"></div>
        </div>
 
-       <div class="diagram_4">
-          <div class="diagram_4_filled"></div>
+       <div class="diagram">
+          <div class="diagram-filled"></div>
        </div>
 
-       <div class="diagram_5">
-          <div class="diagram_5_filled"></div>
+       <div class="diagram">
+          <div class="diagram-filled"></div>
        </div>
 
-       <div class="diagram_6">
-          <div class="diagram_6_filled"></div>
+       <div class="diagram">
+          <div class="diagram-filled"></div>
        </div>
 
-       <div class="diagram_7">
-        <div class="diagram_7_filled"></div>
+       <div class="diagram">
+        <div class="diagram-filled"></div>
        </div>
     </div>
 

@@ -63,7 +63,6 @@ body {
   justify-content: space-between;
 }
 
-
 /* Uke dagene under søyle diagramen */
 
  .week {
@@ -85,99 +84,62 @@ width: 70%;
 }
 
 /* Søylene : Laget med egen css og egen html*/
-.diagram_1 {
+.diagram {
   width: 50px;
   height: 170px;
-  background: #DEDEDE;
+  background: #003B49;
 }
 
-.diagram_1_filled {
-  height: 0%;
+.diagram-filled {
+  height: 100%;
   width: 100%;
-  background-color: #003B49;
-
-  transition: height 2s;
-
-}
-
-.diagram_2 {
-  width: 50px;
-  height: 170px;
-  background: #DEDEDE;
+  background-color: #DEDEDE;
+  transition: 2s;
 }
 
 .diagram_2_filled {
-  height: 0%;
+  height: 100%;
   width: 100%;
-  background-color: #003B49;
-  transition: height 2s;
+  background-color: #DEDEDE;
+  transition: 2s;
 }
 
-.diagram_3 {
-  width: 50px;
-  height: 170px;
-  background: #DEDEDE;
-}
 
 .diagram_3_filled {
-  height: 0%;
+  height: 100%;
   width: 100%;
-  background-color: #003B49;
-  transition: height 2s;
+  background-color: #DEDEDE;
+  transition: 2s;
 }
 
-.diagram_4 {
-  width: 50px;
-  height: 170px;
-  background: #DEDEDE;
-
-}
 
 .diagram_4_filled {
-  height: 0%;
+  height: 100%;
   width: 100%;
-  background-color: #003B49;
-  transition: height 2s;
+  background-color: #DEDEDE;
+  transition: 2s;
 }
 
-.diagram_5 {
-  width: 50px;
-  height: 170px;
-  background: #DEDEDE;
-}
 
 .diagram_5_filled {
-  height: 0%;
+  height: 100%;
   width: 100%;
-  background-color: #003B49;
-  transition: height 2s;
-}
-
-.diagram_6 {
-  width: 50px;
-  height: 170px;
-
-  background: #DEDEDE;
+  background-color: #DEDEDE;
+  transition: 2s;
 }
 
 .diagram_6_filled {
-  height: 0%;
+  height: 100%;
   width: 100%;
-  background-color: #003B49;
-  transition: height 2s;
-}
-
-.diagram_7 {
-  width: 50px;
-  height: 170px;
-  background: #DEDEDE;
+  background-color: #DEDEDE;
+  transition: 2s;
 }
 
 .diagram_7_filled {
-  height: 0%;
+  height: 100%;
   width: 100%;
-  background-color: #003B49;
-  transition: height 2s;
+  background-color: #DEDEDE;
+  transition: 2s;
 }
 
 
