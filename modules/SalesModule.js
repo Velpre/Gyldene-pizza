@@ -12,7 +12,7 @@ const SalesModule = ( function (){
         grossRevenueAccThisYear: 500000,
         grossRevenuePreviousYear: 700000,
 
-        revenueDaysLastweek : [ 7000, 8500,9000,23500,11000,20000,600]
+        revenueDaysLastweek : [ 7000, 8500,9000,23500,11000,60000,60000]
     },
     {
         name: "Nydalen",
@@ -25,7 +25,7 @@ const SalesModule = ( function (){
         grossRevenueAccThisYear: 300000,
         grossRevenuePreviousYear: 600000,
 
-        revenueDaysLastweek : [ 5000, 9500,16000,10500,25000,1000,1200]
+        revenueDaysLastweek : [ 5000, 9500,16000,10500,25000,11000,1200]
     },
     {
         name: "Grunerløkka",
@@ -39,7 +39,7 @@ const SalesModule = ( function (){
         grossRevenueAccThisYear: 500000,
         grossRevenuePreviousYear: 900000,
 
-        revenueDaysLastweek : [ 10000, 13500,15000,14500,16000,1000,160]
+        revenueDaysLastweek : [ 10000, 13500,15000,14500,16000,11000,160]
     },
     {
         name: "Karl-Johan",
@@ -53,7 +53,7 @@ const SalesModule = ( function (){
         grossRevenueAccThisYear: 300000,
         grossRevenuePreviousYear: 500000,
 
-        revenueDaysLastweek : [ 20000, 23500,30000,4500,15000,500,15000]
+        revenueDaysLastweek : [ 20000, 23500,30000,4500,15000,1500,15000]
     }
     ]
 
@@ -72,6 +72,7 @@ const SalesModule = ( function (){
         return total;
     }
 
+console.log(getTotalperDay(0))
 
 
 

@@ -21,24 +21,25 @@ body {
 
 /* Headers */
 .home-header {
-  position: absolute;
-  top: 1%;
-  left: 5%;
+  margin-left: 5%;
   font-size: 50px;
 }
 
 .total-sales-header {
-  position: absolute;
-  top: 10%;
-  left: 10%;
   font-size: 25px;
+  margin-left: 10%;
+  display: inline-block;
 }
 
 .total-past-header{
-  position: absolute;
-  top:10%;
-  right: 19%;
+  display: inline-block;
   color: #A9A9A9;
+}
+
+.home-header-div{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
 }
 
 
@@ -46,11 +47,10 @@ body {
 
 .total_sales_container {
   width: 100%;
-  position: absolute;
-  top: 20%;
   display:flex;
   justify-content: center;
   flex-wrap: wrap;
+
 }
 
 /* Sales tall skala */
@@ -64,181 +64,113 @@ body {
 }
 
 /* Uke dagene under søyle diagramen */
-
  .week {
   color: #A9A9A9;
   font-size: 16px;
   display: flex;
   justify-content: space-around;
   width: 70%;
-  margin: auto;
+  margin-top: 2%;
   position: relative;
   left:1.7%;
-}
+
+  }
 
 /* Søyle diagram */
 .diagrams_container {
-display: flex;
-justify-content: space-around;
-width: 70%;
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
 }
 
-/* Søylene : Laget med egen css og egen html*/
+/* Søylene som fyller seg opp ved hjelp av JS og data fra sales module*/
 .diagram {
   width: 50px;
   height: 170px;
-  background: #003B49;
+  background: #DEDEDE;
+  transform: rotate(180deg);
+
 }
 
 .diagram-filled {
-  height: 100%;
+  height: 0%;
   width: 100%;
-  background-color: #DEDEDE;
+  background-color: #003B49;
   transition: 2s;
 }
-
-.diagram_2_filled {
-  height: 100%;
-  width: 100%;
-  background-color: #DEDEDE;
-  transition: 2s;
-}
-
-
-.diagram_3_filled {
-  height: 100%;
-  width: 100%;
-  background-color: #DEDEDE;
-  transition: 2s;
-}
-
-
-.diagram_4_filled {
-  height: 100%;
-  width: 100%;
-  background-color: #DEDEDE;
-  transition: 2s;
-}
-
-
-.diagram_5_filled {
-  height: 100%;
-  width: 100%;
-  background-color: #DEDEDE;
-  transition: 2s;
-}
-
-.diagram_6_filled {
-  height: 100%;
-  width: 100%;
-  background-color: #DEDEDE;
-  transition: 2s;
-}
-
-.diagram_7_filled {
-  height: 100%;
-  width: 100%;
-  background-color: #DEDEDE;
-  transition: 2s;
-}
-
 
 /* Linjer som deler skjermen */
 .horizontal_line {
-  width: 70%;
+  width: 60%;
+  margin:  3% auto 0;
   height: 5px;
-  position: absolute;
-  top: 55%;
-  left:50%;
-  transform: translateX(-50%);
   background: #DEDEDE;
   border-radius: 20px;
 }
 
+/* Container for budget og profit delen */
 
+.budget-profit-container{
+  text-align: center;
+  display:flex;
+  justify-content:space-around;
+  width: 80%;
+  margin: auto;
+}
+/* Budget delen  */
+.budget-container{
+  width: 50%;
+}
 
-/* Sirkel delen - Budget  */
-.budget_page_container {
-  width: 40%;
-  height: 30%;
-  position: absolute;
-  top: 60%;
-  left: 10%;
+.budget-header{
   font-size: 25px;
+  margin-bottom: 15%;
 }
 
-.goal_circle {
-  position: absolute;
-  top: 20%;
-  left: 15%;
-  width: 60%;
-  height: 75%;
-  background: #003B49;
-  border-radius: 50%;
+.budget-sales-header{
+ font-size: 1.5vw;
+ font-style: italic;
+ color:#A9A9A9;
 }
 
-.goal_circle_inside {
-  position: relative;
-  left: 5%;
-  top: 5%;
-  width: 90%;
-  height: 90%;
-  background-color: #f5f5fd;
-  border-radius: 50%;
+.span-sales{
+ font-size: 3.5vw;
+ font-style: normal;
+ color: #000;
 }
 
-.goal_circle_inside2 {
-  position: relative;
-  top: -10%;
-  left: 48%;
-  height: 120%;
-  background-color: #f5f5fd;
+.budget-total-header{
+ font-size: 1.5vw;
+ font-style: italic;
+ color:#A9A9A9;
 }
-
-.total_circel {
-  position: absolute;
-  top: 45%;
-  left: 28%;
-}
-
-.accomplished_number {
-  font-size: 35px;
-  display: block;
-}
-
-.total_goal_number {
-  font-size: 20px;
-  margin-left: 40%;
-  color:  #A9A9A9;
-}
-
-.percent_accomplished_txt {
-  position: absolute;
-  margin-top: 20px;
-  top: 100%;
-  left: 20%;
-  font-size: 25px;
+.span-total{
+ font-size: 3.5vw;
+ font-style: normal;
+ color: #000;
 }
 
 /* Profit delen */
-
-.profit_title {
+.profit-container{
+  width: 50%;
+}
+.profit-header {
   font-size: 25px;
-  position: absolute;
-  bottom: 36%;
-  right: 35%;
+  margin-bottom: 15%;
 }
-
-.total_profit_div{
-  position: absolute;
-  bottom: 15%;
-  right: 8%;
-}
-
 .total_profit_number {
   font-size: 6vw;
 }
-
 .profit_k{
   font-size: 3vw;
+}
+
+@media screen and (max-width: 920px) {
+
+  .main-content{
+    width: 93%;
+
+  }
+
+
 }

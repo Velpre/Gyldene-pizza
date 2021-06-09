@@ -6,22 +6,23 @@ let mainTextHome = `
 
 
     <h1 class="home-header">HOME</h1>
+    <div class="home-header-div">
     <h3 class="total-sales-header">TOTAL SALES</h3>
     <h4 class="total-past-header">PAST 7 DAYS</h4>
+    </div>
 
     <!-- Total sales container -->
     <div class="total_sales_container">
 
         <div class="sales_numbers_container">
           <span>100K</span>
-          <span class="sales_75">75K</span>
-          <span class="sales_50">50K</span>
-          <span class="sales_25">25K</span>
-          <span class="sales_0">0</span>
+          <span>75K</span>
+          <span>50K</span>
+          <span>25K</span>
+          <span>0</span>
         </div>
 
-
-    <div class="diagrams_container">
+        <div class="diagrams_container">
         <div class="diagram">
            <div class="diagram-filled"></div>
         </div>
@@ -49,52 +50,44 @@ let mainTextHome = `
        <div class="diagram">
         <div class="diagram-filled"></div>
        </div>
-    </div>
+       </div>
 
-    <div class="week">
-      <span class="week_monday">M</span>
-      <span class="week_tuesday">T</span>
-      <span class="week_wednesday">W</span>
-      <span class="week_thursday">T</span>
-      <span class="week_friday">F</span>
-      <span class="week_saturday">S</span>
-      <span class="week_sunday">S</span>
-    </div>
+       <div class="week">
+      <span>M</span>
+      <span>T</span>
+      <span>W</span>
+      <span>T</span>
+      <span>F</span>
+      <span>S</span>
+      <span>S</span>
+      </div>
   </div>
 
   <!-- Horisontal og vertical linje som deler grafene -->
 
-    <div class="horizontal_line"></div>
-    <div class="vertical_line"></div>
+  <div class="horizontal_line"></div>
 
-  <!-- Budget -->
-  <div class="budget_page_container">
-  <span>BUDGET</span>
-    <div class="goal_circle">
-      <div class="goal_circle_inside">
-        <div class="goal_circle_inside2"></div>
-      </div>
+  <!-- Budget & Profit -->
+  <div class="budget-profit-container">
+
+    <div class="budget-container">
+      <h3 class="budget-header">BUDGET</h3>
+
+      <p class="budget-sales-header">SALES: <span class="span-sales">150 000.-</span></p>
+      <p class="budget-total-header">TOTAL: <span class="span-total">300 000.-</span></p>
+
+
     </div>
 
-    <div class="total_circel">
-      <span class="accomplished_number">150 000</span>
-      <span class="total_goal_number">300 000</span>
-    </div>
 
-      <span class="percent_accomplished_txt">50% OF GOAL</span>
-  </div>
+    <div class="profit-container">
 
-  <!-- Profit -->
-  <div class="profit_container">
-
-      <span class="profit_title">PROFIT</span>
-
-
-      <div class="total_profit_div">
-      <span class="total_profit_number">$</span><span class="profit_k"> .-</span>
+      <h3 class="profit-header">PROFIT</h3>
+      <div class="total_profit_number">
+      <span >$</span><span class="profit_k"> .-</span>
       </div>
+    </div>
   </div>
-
 `
 // Loader opp homecontent når siden lastes opp og printer ut home content når brukeren klikker på Home
 window.onload = mainContentHome.innerHTML = mainTextHome;
