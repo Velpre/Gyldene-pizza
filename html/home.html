@@ -7,8 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Futura&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <!-- CSS links -->
-    <link rel="stylesheet" href="../css/navbar-inbox.css">
     <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/navbar-inbox.css">
+
     <!-- Modules -->
     <script defer type="module" src="../JS/home.js" charset="utf-8"></script>
     <title>Home</title>
@@ -17,17 +18,42 @@
 
   <!-- Overlay som fylles ut med JS (når brukeren har klikket på en melding) -->
   <div class="overlay"></div>
+  <!-- Navbar -->
+  <div class="navbar-container">
+    <div class="navbar-wrap">
+      <div class="navbar-item">
+        <a class="navbar-home" href="#"><i class="fas fa-home"></i></a>
+        <span class="tooltiptext">HOME</span>
+      </div>
+      <div class="navbar-item">
+        <a class="navbar-food" href="#"><i class="fas fa-pizza-slice"></i></a>
+        <span class="tooltiptext">FOOD</span>
+      </div>
+      <div class="navbar-item">
+        <a class="navbar-employees" href="#"><i class="fas fa-users"></i></a>
+        <span class="tooltiptext">EMPLOYEES</span>
+      </div>
+      <div class="navbar-item">
+        <a class="navbar-sales" href="#"><i class="fas fa-chart-line"></i></a>
+        <span class="tooltiptext">SALES</span>
+      </div>
+    </div>
+  </div>
+  </div>
   <!-- Printer ut hoved innhold gjennom JS -->
   <div class="main-content">
 
   </div>
+
+
+
 
   <!-- Inbox delen-->
   <i class=" inbox-icone fas fa-envelope fa-2x"></i>
   <i class="close-inbox fas fa-times fa-1x"></i>
   <div class="inbox_container">
 
-  <div class="inbox-wrap">
+    <div class="inbox-wrap">
 
       <div class="welcome_message">
         <img class="profile_picture" src="../images/employees/userImageInbox.png" alt="userPic">
@@ -102,34 +128,14 @@
     </div>
   </div>
 
-  <div class="logout_container">
+    <div class="logout_container">
     <a href="../index.html"><i class=" logout_icone fas fa-sign-out-alt fa-2x"></i></a>
   </div>
 
   </div>
 
-  <!-- Navbar -->
-  <div class="navbar-container">
-    <div class="navbar-wrap">
-      <div class="navbar-item">
-        <a class="navbar-home" href="#"><i class="fas fa-home"></i></a>
-        <span class="tooltiptext">HOME</span>
-      </div>
-      <div class="navbar-item">
-        <a class="navbar-food" href="#"><i class="fas fa-pizza-slice"></i></a>
-        <span class="tooltiptext">FOOD</span>
-      </div>
-      <div class="navbar-item">
-        <a class="navbar-employees" href="#"><i class="fas fa-users"></i></a>
-        <span class="tooltiptext">EMPLOYEES</span>
-      </div>
-      <div class="navbar-item">
-        <a class="navbar-sales" href="#"><i class="fas fa-chart-line"></i></a>
-        <span class="tooltiptext">SALES</span>
-      </div>
-    </div>
-  </div>
-  </div>
+
+
 
   <!-- JS Scripts -->
   <script src="../js/navbar-inbox.js" charset="utf-8"></script>

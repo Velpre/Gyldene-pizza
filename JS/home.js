@@ -3,25 +3,23 @@ const mainContentHome = document.querySelector(".main-content");
 const navbarHome = document.querySelector(".navbar-home");
 let mainTextHome = `
 
-<div class="home_page_container">
-  <div class="top_page_title_container">
-    <span>HOME</span>
-  </div>
 
-  <!-- Total sales container -->
-  <div class="total_sales_container">
-    <span class="total_sales_title">TOTAL SALES</span>
-    <span class="total_sales_past">PAST 7 DAYS</span>
 
-      <div class="week">
-        <span class="week_monday">M</span>
-        <span class="week_tuesday">T</span>
-        <span class="week_wednesday">W</span>
-        <span class="week_thursday">T</span>
-        <span class="week_friday">F</span>
-        <span class="week_saturday">S</span>
-        <span class="week_sunday">S</span>
-      </div>
+    <h1 class="home-header">HOME</h1>
+    <h3 class="total-sales-header">TOTAL SALES</h3>
+    <h4 class="total-past-header">PAST 7 DAYS</h4>
+
+    <!-- Total sales container -->
+    <div class="total_sales_container">
+
+        <div class="sales_numbers_container">
+          <span>100K</span>
+          <span class="sales_75">75K</span>
+          <span class="sales_50">50K</span>
+          <span class="sales_25">25K</span>
+          <span class="sales_0">0</span>
+        </div>
+
 
     <div class="diagrams_container">
         <div class="diagram_1">
@@ -50,28 +48,26 @@ let mainTextHome = `
 
        <div class="diagram_7">
         <div class="diagram_7_filled"></div>
-
-     </div>
+       </div>
     </div>
 
-    <div class="sales_numbers_container">
-      <span>100K</span>
-      <span class="sales_75">75K</span>
-      <span class="sales_50">50K</span>
-      <span class="sales_25">25K</span>
-      <span class="sales_0">0</span>
+    <div class="week">
+      <span class="week_monday">M</span>
+      <span class="week_tuesday">T</span>
+      <span class="week_wednesday">W</span>
+      <span class="week_thursday">T</span>
+      <span class="week_friday">F</span>
+      <span class="week_saturday">S</span>
+      <span class="week_sunday">S</span>
     </div>
-  </div><!-- Total sales container ends -->
+  </div>
 
   <!-- Horisontal og vertical linje som deler grafene -->
 
     <div class="horizontal_line"></div>
     <div class="vertical_line"></div>
 
-
-
   <!-- Budget -->
-
   <div class="budget_page_container">
   <span>BUDGET</span>
     <div class="goal_circle">
@@ -98,7 +94,7 @@ let mainTextHome = `
       <span class="total_profit_number">$</span><span class="profit_k"> .-</span>
       </div>
   </div>
-</div>
+
 `
 // Loader opp homecontent når siden lastes opp og printer ut home content når brukeren klikker på Home
 window.onload = mainContentHome.innerHTML = mainTextHome;
@@ -111,12 +107,11 @@ navbarHome.addEventListener("click", ()=>{
 
 // Importerer Salesmodule for å bruke data inn i funksjonen under
 import SalesModule from '../Modules/SalesModule.js';
-
 // Henter data fra SalesModule
 function totalNumber(){
-const salesArray = SalesModule.getAll();
-const totalProfit = salesArray[0].revenueAccThisYear + salesArray[1].revenueAccThisYear + salesArray[2].revenueAccThisYear + salesArray[3].revenueAccThisYear;
-return totalProfit;
+  const salesArray = SalesModule.getAll();
+  const totalProfit = salesArray[0].revenueAccThisYear + salesArray[1].revenueAccThisYear + salesArray[2].revenueAccThisYear + salesArray[3].revenueAccThisYear;
+  return totalProfit;
 }
 // Lager array med data
 function makeNumbers(){

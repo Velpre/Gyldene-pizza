@@ -11,256 +11,175 @@ body {
   background-color: #f5f5fd;
 }
 
-.main_content{
+.main-content{
   position: absolute;
   left: 7%;
+  top:0;
   width: 73%;
   height: 100vh;
 }
 
-.top_page_title_container {
+/* Headers */
+.home-header {
   position: absolute;
-  top: 5%;
+  top: 1%;
   left: 5%;
   font-size: 50px;
 }
 
-.total_sales_container {
-  width: 100%;
-  height: 50%;
+.total-sales-header {
   position: absolute;
   top: 10%;
-}
-
-.total_sales_title {
-  width: 50%;
-  position: absolute;
-  top: 12%;
   left: 10%;
-  font-family: Futura;
-  font-weight: Bold;
   font-size: 25px;
 }
 
-.total_sales_past{
+.total-past-header{
   position: absolute;
-  top:13%;
+  top:10%;
   right: 19%;
   color: #A9A9A9;
 }
 
+
+/* Total-sales container */
+
+.total_sales_container {
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Sales tall skala */
+.sales_numbers_container {
+  letter-spacing: 1px;
+  color: #A9A9A9;
+  font-size: 15px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
 /* Uke dagene under søyle diagramen */
 
-.week {
-  width: 48%;
-  height: 250px;
-  position: absolute;
-  top: 75%;
-  left: 26%;
+ .week {
   color: #A9A9A9;
   font-size: 16px;
-}
-
-.week_monday {
-  position: absolute;
-  left: 1%;
-}
-
-.week_tuesday {
-  position: absolute;
-  left: 20%;
-}
-
-.week_wednesday {
-  position: absolute;
-  left: 37%;
-}
-
-.week_thursday {
-  position: absolute;
-  left: 55%;
-}
-
-.week_friday {
-  position: absolute;
-  left: 73%;
-}
-
-.week_saturday {
-  position: absolute;
-  left: 91%;
-}
-
-.week_sunday {
-  position: absolute;
-  left: 109%;
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin: auto;
+  position: relative;
+  left:1.7%;
 }
 
 /* Søyle diagram */
 .diagrams_container {
-  width: 53%;
-  height: 200px;
-  position: absolute;
-  top: 30%;
-  left: 25%;
+display: flex;
+justify-content: space-around;
+width: 70%;
 }
 
 /* Søylene : Laget med egen css og egen html*/
 .diagram_1 {
   width: 50px;
   height: 170px;
-  position: absolute;
   background: #DEDEDE;
-  margin-right: 10px;
-  border: #FC7B61;
 }
 
 .diagram_1_filled {
   height: 0%;
   width: 100%;
   background-color: #003B49;
-  position: absolute;
-  bottom: 0;
+
   transition: height 2s;
-  margin-right: 10px;
+
 }
 
 .diagram_2 {
   width: 50px;
   height: 170px;
-  position: absolute;
   background: #DEDEDE;
-  left: 16%;
 }
 
 .diagram_2_filled {
   height: 0%;
   width: 100%;
   background-color: #003B49;
-  position: absolute;
-  bottom: 0;
   transition: height 2s;
 }
 
 .diagram_3 {
   width: 50px;
   height: 170px;
-  position: absolute;
   background: #DEDEDE;
-  left: 32%;
 }
 
 .diagram_3_filled {
   height: 0%;
   width: 100%;
   background-color: #003B49;
-  position: absolute;
-  bottom: 0;
   transition: height 2s;
 }
 
 .diagram_4 {
   width: 50px;
   height: 170px;
-  position: absolute;
   background: #DEDEDE;
-  left: 48%;
+
 }
 
 .diagram_4_filled {
   height: 0%;
   width: 100%;
   background-color: #003B49;
-  position: absolute;
-  bottom: 0;
   transition: height 2s;
 }
 
 .diagram_5 {
   width: 50px;
   height: 170px;
-  position: absolute;
   background: #DEDEDE;
-  left: 64%;
 }
 
 .diagram_5_filled {
   height: 0%;
   width: 100%;
   background-color: #003B49;
-  position: absolute;
-  bottom: 0;
   transition: height 2s;
 }
 
 .diagram_6 {
   width: 50px;
   height: 170px;
-  position: absolute;
+
   background: #DEDEDE;
-  left: 80%;
 }
 
 .diagram_6_filled {
   height: 0%;
   width: 100%;
   background-color: #003B49;
-  position: absolute;
-  bottom: 0;
   transition: height 2s;
 }
 
 .diagram_7 {
   width: 50px;
   height: 170px;
-  position: absolute;
   background: #DEDEDE;
-  left: 96%;
 }
 
 .diagram_7_filled {
   height: 0%;
   width: 100%;
   background-color: #003B49;
-  position: absolute;
-  bottom: 0;
   transition: height 2s;
 }
 
-.sales_numbers_container {
-  height: 43%;
-  position: absolute;
-  top: 28%;
-  left: 15%;
-  letter-spacing: 1px;
-  color: #A9A9A9;
-  font-size: 15px;
-}
-
-
-.sales_75 {
-  position: absolute;
-  top: 22%;
-  left: 2%;
-}
-
-.sales_50 {
-  position: absolute;
-  top: 45%;
-  left: 2%;
-}
-
-.sales_25 {
-  position: absolute;
-  top: 69%;
-  left: 2%;
-}
-
-.sales_0 {
-  position: absolute;
-  top: 90%;
-  left: 6%;
-}
 
 /* Linjer som deler skjermen */
 .horizontal_line {
