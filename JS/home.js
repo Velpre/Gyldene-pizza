@@ -65,30 +65,70 @@ window.onload = slicingMsgTxt();
 // Toggler expanded class som åpner og stenger inbox meldinger
  // Toggler hidden class som gjemmer og viser tiden for meldingene
  // Printer ut hele meldingen og slicer den når meldingen ikke er ekspandert
+
 expandable.forEach(element => {
 element.addEventListener("click", (e)=>{
     e.currentTarget.children[0].classList.toggle("hidden");
     e.currentTarget.classList.toggle("expanded");
     e.currentTarget.children[1].children[0].classList.toggle("visible");
-    // console.log(e.currentTarget.dateset.msgTxt;
     overlay.classList.toggle("overlay_active");
   // Sjekker om brukeren har klikket på nyeste meldingen for å fjerne grønn border
-  if (e.currentTarget.children[1].children[2].children[0].innerHTML.length >53) {
+  if (e.currentTarget.children[1].children[2].children[0].innerHTML.length >50) {
     slicingMsgTxt()
   }else if(e.currentTarget.classList.contains("msg3_time")){
     msg3.style.border="none";
     e.currentTarget.children[1].children[2].children[0].innerHTML = msgArray[2]
+    e.currentTarget.children[1].children[2].children[0].style.display = "inline-block";
   }else if (e.currentTarget.classList.contains("msg2_time")) {
     e.currentTarget.children[1].children[2].children[0].innerHTML = msgArray[1];
+    e.currentTarget.children[1].children[2].children[0].style.display = "inline-block";
   }else if (e.currentTarget.classList.contains("msg1_time")) {
     e.currentTarget.children[1].children[2].children[0].innerHTML = msgArray[0];
+  }
+
+  if(e.currentTarget.classList.contains("expanded")){
+    e.currentTarget.children[1].children[2].children[0].style.display="inline-block";
+  }else if (!e.currentTarget.classList.contains("expanded")) {
+    e.currentTarget.children[1].children[2].children[0].style.display="inline-block";
   }
 
 });
 });
 
+window.addEventListener("resize", function(){
+    const msgTxtDiv = document.querySelector(".message_txt_div");
+    if (document.documentElement.clientWidth < 920) {
+      msgTxtDiv.style.display="none";
+    }
+    else {
+      msgTxtDiv.style.display="inline-block";
+    }
+}, true);
+
 // Koden som henter username fra localStorage og printer det ut i inbox delen
 window.onload = inboxName.innerHTML = localStorage.getItem("username");
+
+
+
+
+// Viser inbox når bruker klikker på melding icone
+// Viser close icone for å stenge inbox
+const messageIcone = document.querySelector(".inbox-icone");
+const inboxContainer = document.querySelector(".inbox_container");
+const closeInbox = document.querySelector(".close-inbox");
+
+messageIcone.addEventListener("click", ()=>{
+  inboxContainer.style.display="inline-block";
+  messageIcone.style.display="none";
+  closeInbox.style.display="inline-block"
+})
+closeInbox.addEventListener("click", ()=>{
+  inboxContainer.style.display = "none";
+  messageIcone.style.display = "inline-block";
+  closeInbox.style.display = "none";
+})
+
+
 
 // Time function som printer ut melding etter vis antal sekunder
 function printMessage3(){
@@ -140,22 +180,3 @@ sales.addEventListener("click", ()=>{
 
  sales.style.borderBottom="4px solid #fff";
 });
-
-// Viser inbox når bruker klikker på melding icone
-
-
-const messageIcone = document.querySelector(".inbox-icone");
-const inboxContainer = document.querySelector(".inbox_container");
-const closeInbox = document.querySelector(".close-inbox");
-
-messageIcone.addEventListener("click", ()=>{
-  inboxContainer.style.display="inline-block";
-  messageIcone.style.display="none";
-  closeInbox.style.display="inline-block"
-})
-
-closeInbox.addEventListener("click", ()=>{
-  inboxContainer.style.display = "none";
-  messageIcone.style.display = "inline-block";
-  closeInbox.style.display = "none";
-})
