@@ -99,6 +99,28 @@ body {
   transition: 2s;
 }
 
+.tooltiptext {
+  font-size: 12px;
+  z-index: 1;
+  width: 90px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  visibility: hidden;
+  transform: rotate(-180deg);
+}
+
+.diagram:hover .tooltiptext {
+  visibility: visible;
+
+}
+
+.diagram:hover{
+  filter: brightness(90%);
+}
+
 /* Linjer som deler skjermen */
 .horizontal_line {
   width: 60%;

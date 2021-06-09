@@ -72,7 +72,6 @@ const SalesModule = ( function (){
         return total;
     }
 
-console.log(getTotalperDay(0))
 
 
 

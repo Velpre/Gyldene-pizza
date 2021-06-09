@@ -25,30 +25,37 @@ let mainTextHome = `
         <div class="diagrams_container">
         <div class="diagram">
            <div class="diagram-filled"></div>
+           <span class="tooltiptext">42 000.-</span>
         </div>
 
         <div class="diagram">
           <div class="diagram-filled"></div>
+          <span class="tooltiptext">55 000.-</span>
         </div>
 
        <div class="diagram">
           <div class="diagram-filled"></div>
+          <span class="tooltiptext">70 000.-</span>
        </div>
 
        <div class="diagram">
           <div class="diagram-filled"></div>
+          <span class="tooltiptext">53 000.-</span>
        </div>
 
        <div class="diagram">
           <div class="diagram-filled"></div>
+          <span class="tooltiptext">67 000.-</span>
        </div>
 
        <div class="diagram">
           <div class="diagram-filled"></div>
+          <span class="tooltiptext">83 000.-</span>
        </div>
 
        <div class="diagram">
         <div class="diagram-filled"></div>
+        <span class="tooltiptext">76 000.-</span>
        </div>
        </div>
 
