@@ -68,7 +68,7 @@ const SalesModule = ( function (){
         total += salesArray[3].revenueDaysLastweek[day];
 
         total = (total/100000) * 100;
-        total = total +"%"
+        total = total
         return total;
     }
 

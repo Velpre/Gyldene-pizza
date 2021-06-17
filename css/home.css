@@ -25,26 +25,22 @@ body {
   font-size: 50px;
 }
 
+.home-header-div{
+  text-align: center;
+  line-height: 0.5;
+}
+
 .total-sales-header {
   font-size: 25px;
-  margin-left: 10%;
-  display: inline-block;
 }
 
 .total-past-header{
-  display: inline-block;
   color: #A9A9A9;
 }
 
-.home-header-div{
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-}
 
 
 /* Total-sales container */
-
 .total_sales_container {
   width: 100%;
   display:flex;
@@ -89,7 +85,6 @@ body {
   height: 170px;
   background: #DEDEDE;
   transform: rotate(180deg);
-
 }
 
 .diagram-filled {
@@ -99,22 +94,23 @@ body {
   transition: 2s;
 }
 
-.tooltiptext {
+.tool {
   font-size: 12px;
   z-index: 1;
-  width: 90px;
+  width: 100%;
   background-color: #000;
   color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
-  visibility: hidden;
   transform: rotate(-180deg);
+  position: absolute;
+  visibility: hidden;
+  bottom:5%;
 }
 
-.diagram:hover .tooltiptext {
+.diagram:hover .tool {
   visibility: visible;
-
 }
 
 .diagram:hover{
@@ -138,6 +134,7 @@ body {
   justify-content:space-around;
   width: 80%;
   margin: auto;
+  flex-wrap: wrap;
 }
 /* Budget delen  */
 .budget-container{
@@ -191,8 +188,13 @@ body {
 
   .main-content{
     width: 93%;
-
   }
+}
 
 
+@media screen and (max-width: 600px) {
+
+  .budget-container{
+    width: 100%;
+  }
 }

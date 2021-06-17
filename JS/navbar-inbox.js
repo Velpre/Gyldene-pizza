@@ -178,3 +178,22 @@ sales.addEventListener("click", ()=>{
 
  sales.style.borderBottom="4px solid #fff";
 });
+
+
+// Viser navbar etter at brukeren har klikket på burger toggle
+
+const navbarToggle = document.querySelector(".toggle-navbar");
+const navbar = document.querySelector(".navbar-container");
+const closeNavbar = document.querySelector(".close-navbar");
+
+navbarToggle.addEventListener("click", ()=>{
+navbar.style.visibility = "visible";
+closeNavbar.style.display = "inline-block";
+navbarToggle.style.display = "none";
+});
+
+closeNavbar.addEventListener("click", ()=>{
+  navbar.style.visibility = "hidden";
+  navbarToggle.style.display = "inline-block";
+  closeNavbar.style.display = "none";
+})
