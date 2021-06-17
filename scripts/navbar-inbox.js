@@ -116,14 +116,27 @@ const inboxContainer = document.querySelector(".inbox_container");
 const closeInbox = document.querySelector(".close-inbox");
 
 messageIcone.addEventListener("click", ()=>{
+  overlay.classList.toggle("overlay_active");
   inboxContainer.style.display="inline-block";
+  inboxContainer.style.zIndex="2";
   messageIcone.style.display="none";
   closeInbox.style.display="inline-block";
+
 })
 closeInbox.addEventListener("click", ()=>{
   inboxContainer.style.display = "none";
   messageIcone.style.display = "inline-block";
   closeInbox.style.display = "none";
+  overlay.classList.toggle("overlay_active");
+  inboxContainer.style.zIndex="0";
+})
+
+overlay.addEventListener("click", ()=>{
+  inboxContainer.style.display = "none";
+  messageIcone.style.display = "inline-block";
+  closeInbox.style.display = "none";
+  overlay.classList.toggle("overlay_active");
+  inboxContainer.style.zIndex="0";
 })
 
 
@@ -188,12 +201,6 @@ const closeNavbar = document.querySelector(".close-navbar");
 
 navbarToggle.addEventListener("click", ()=>{
 navbar.style.visibility = "visible";
-closeNavbar.style.display = "inline-block";
 navbarToggle.style.display = "none";
+overlay.classList.toggle("overlay_active");
 });
-
-closeNavbar.addEventListener("click", ()=>{
-  navbar.style.visibility = "hidden";
-  navbarToggle.style.display = "inline-block";
-  closeNavbar.style.display = "none";
-})

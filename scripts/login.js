@@ -18,14 +18,12 @@ window.onload = function(){
 
 singin.addEventListener("click", ()=>{
   printSigninContent();
-
+  
   signInLines();
   loginBtn();
   showUsername();
   togglePasswordVisibility();
   inputLinesAnimatiosLogin();
-
-
 })
 
 createAcount.addEventListener("click", ()=>{
