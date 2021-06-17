@@ -81,7 +81,7 @@ body {
 
 /* Søylene som fyller seg opp ved hjelp av JS og data fra sales module*/
 .diagram {
-  width: 50px;
+  width: 10%;
   height: 170px;
   background: #DEDEDE;
   transform: rotate(180deg);

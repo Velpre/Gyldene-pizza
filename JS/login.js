@@ -45,7 +45,7 @@ function printSigninContent(){
   <h1 class="name-header-line" id="username-header"></h1>
   `
   mainContent.innerHTML = `
-    <form id="form" action="./html/home.html">
+    <form id="form" action="./home.html">
 
       <div class="login-div">
 
