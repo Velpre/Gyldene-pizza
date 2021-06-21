@@ -1,4 +1,6 @@
-const overlay = document.querySelector(".overlay");
+const overlayMessage = document.querySelector(".overlay-message");
+const overlayInbox = document.querySelector(".overlay-inbox");
+const overlayNavbar = document.querySelector(".overlay-navbar");
 const message3 = document.querySelector(".msg3_time");
 const msg3 = document.querySelector(".msg3");
 const inboxName = document.querySelector(".inbox_name");
@@ -48,7 +50,7 @@ yesterdayTxt.forEach(day =>{
   day.innerHTML = yesterday;
 });
 
-// Function som slicer og printer message text til x antall bokstaver - Må jobbes mere med
+// Function som slicer og printer message text til x antall bokstaver
 const msgArray = [
    "Kenneth er syk idag. Kunne du sett om vi har noen som kan erstate kveldsvakta hans?",
    "Kunne vi flyttet neste onsdags møte til torsdag? Jeg må være på restorangen fram til kl.12, men etter det er jeg ledig når som helst.",
@@ -62,52 +64,33 @@ function slicingMsgTxt(){
 };
 window.onload = slicingMsgTxt();
 
+// Koden som henter username fra localStorage og printer det ut i inbox delen
+window.onload = inboxName.innerHTML = localStorage.getItem("username");
+
+
 // Toggler expanded class som åpner og stenger inbox meldinger
 // Toggler hidden class som gjemmer og viser tiden for meldingene
 // Printer ut hele meldingen og slicer den når meldingen ikke er ekspandert
-
 expandable.forEach(element => {
 element.addEventListener("click", (e)=>{
-    e.currentTarget.children[0].classList.toggle("hidden");
+  console.log(e.currentTarget.children[0])
     e.currentTarget.classList.toggle("expanded");
     e.currentTarget.children[1].children[0].classList.toggle("visible");
-    overlay.classList.toggle("overlay_active");
+    e.currentTarget.children[0].classList.toggle("hidden");
+    overlayMessage.classList.toggle("overlay_active");
   // Sjekker om brukeren har klikket på nyeste meldingen for å fjerne grønn border
   if (e.currentTarget.children[1].children[2].children[0].innerHTML.length >50) {
     slicingMsgTxt()
   }else if(e.currentTarget.classList.contains("msg3_time")){
     msg3.style.border="none";
     e.currentTarget.children[1].children[2].children[0].innerHTML = msgArray[2]
-    e.currentTarget.children[1].children[2].children[0].style.display = "inline-block";
   }else if (e.currentTarget.classList.contains("msg2_time")) {
     e.currentTarget.children[1].children[2].children[0].innerHTML = msgArray[1];
-    e.currentTarget.children[1].children[2].children[0].style.display = "inline-block";
   }else if (e.currentTarget.classList.contains("msg1_time")) {
     e.currentTarget.children[1].children[2].children[0].innerHTML = msgArray[0];
   }
-
-  if(e.currentTarget.classList.contains("expanded")){
-    e.currentTarget.children[1].children[2].children[0].style.display="inline-block";
-  }else if (!e.currentTarget.classList.contains("expanded")) {
-    e.currentTarget.children[1].children[2].children[0].style.display="inline-block";
-  }
-
 });
 });
-
-// window.addEventListener("resize", function(){
-//     const msgTxtDiv = document.querySelector(".message_txt_div");
-//     if (document.documentElement.clientWidth < 920) {
-//       msgTxtDiv.style.display="none";
-//     }
-//     else {
-//       msgTxtDiv.style.display="inline-block";
-//     }
-// }, true);
-
-// Koden som henter username fra localStorage og printer det ut i inbox delen
-window.onload = inboxName.innerHTML = localStorage.getItem("username");
-
 
 // Viser inbox når bruker klikker på melding icone
 // Viser close icone for å stenge inbox
@@ -116,9 +99,8 @@ const inboxContainer = document.querySelector(".inbox_container");
 const closeInbox = document.querySelector(".close-inbox");
 
 messageIcone.addEventListener("click", ()=>{
-  overlay.classList.toggle("overlay_active");
+  overlayInbox.classList.toggle("overlay_active");
   inboxContainer.style.display="inline-block";
-  inboxContainer.style.zIndex="2";
   messageIcone.style.display="none";
   closeInbox.style.display="inline-block";
 
@@ -127,16 +109,15 @@ closeInbox.addEventListener("click", ()=>{
   inboxContainer.style.display = "none";
   messageIcone.style.display = "inline-block";
   closeInbox.style.display = "none";
-  overlay.classList.toggle("overlay_active");
-  inboxContainer.style.zIndex="0";
+  overlayInbox.classList.toggle("overlay_active");
+  overlayMessage.classList.remove("overlay_active");
 })
 
-overlay.addEventListener("click", ()=>{
+overlayInbox.addEventListener("click", ()=>{
   inboxContainer.style.display = "none";
   messageIcone.style.display = "inline-block";
   closeInbox.style.display = "none";
-  overlay.classList.toggle("overlay_active");
-  inboxContainer.style.zIndex="0";
+  overlayInbox.classList.toggle("overlay_active");
 })
 
 
@@ -194,13 +175,18 @@ sales.addEventListener("click", ()=>{
 
 
 // Viser navbar etter at brukeren har klikket på burger toggle
-
 const navbarToggle = document.querySelector(".toggle-navbar");
 const navbar = document.querySelector(".navbar-container");
 const closeNavbar = document.querySelector(".close-navbar");
 
 navbarToggle.addEventListener("click", ()=>{
-navbar.style.visibility = "visible";
-navbarToggle.style.display = "none";
-overlay.classList.toggle("overlay_active");
+  navbar.style.visibility = "visible";
+  navbarToggle.style.display = "none";
+  overlayNavbar.classList.toggle("overlay_active");
+});
+
+overlayNavbar.addEventListener("click", ()=>{
+  navbar.style.visibility = "hidden";
+  navbarToggle.style.display = "inline-block";
+  overlayNavbar.classList.toggle("overlay_active");
 });
